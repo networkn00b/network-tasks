@@ -1,6 +1,6 @@
 # network-tasks
 
-This ansible playbook has been created to audit and disable all unused/inactive trunk ports on Cisco network access switches within a network.
+This ansible playbook 'shutdown-trunk-ports' has been created to audit and disable all unused/inactive trunk ports on Cisco network access switches within a network.
 
 It gathers interface facts and verifies all interfaces with the status 'down'
 
