@@ -1,0 +1,28 @@
+---
+
+- name: Shutdown Unused Trunk Ports
+  connection: network_cli
+  hosts: mysite
+  gather_facts: false
+  vars:
+    item_desc: "{{ item.value.description }}"
+
+  tasks:
+    - name: Gather interface Facts
+      ios_facts:
+        gather_subset: interfaces
+      register: iosfacts
+
+    - name: Show IOS Facts
+      debug:
+        msg: "show {{ iosfacts.ansible_facts.ansible_net_interfaces }}"
+
+    - name: Configure all interfaces that match description and status
+      ios_config:
+        lines:
+          - shutdown
+        parents: "interface {{ item.key }}"
+      with_dict: "{{ iosfacts.ansible_facts.ansible_net_interfaces }}"
+      when:
+        - ( item_desc | join('') ) is search('UPLINK')
+        - item.value.operstatus == "down"
