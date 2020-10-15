@@ -18,14 +18,14 @@ To use this playbook you will need:
 
 # Install and Setup
 1. Logon to your Linux box
-2. Execute the following to download playbook git clone https://github.com/networkn00b/network-tasks.git
+2. Execute the following to download playbook "git clone https://github.com/networkn00b/network-tasks.git"
 3. cd ~/git/networkn00b
 4. Move yaml files into folder containing your ansible installation
 5. Update hosts file, under mysite include hostnames/IPs of devices being targetted
 6. Update network_cli with credentials to access devices
 7. If required, Update shutdown-trunk-ports.yml file  with description of interfaces being targetted
 8. Execute playbook "ansible-playbook shutdown-trunk-ports.yml -C -V" to check config of playbook and expected result
-9. Execute playbook without check mode to proceed to disable interfaces - ansible-playbook shutdown-trunk-ports.yml
+9. Execute playbook without check mode to proceed to disable interfaces "ansible-playbook shutdown-trunk-ports.yml"
 
 
 
