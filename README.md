@@ -24,7 +24,7 @@ To use this playbook you will need:
 5. Update hosts file, under mysite include hostnames/IPs of devices being targetted
 6. Update network_cli with credentials to access devices
 7. If required, Update shutdown-trunk-ports.yml file  with description of interfaces being targetted
-8. Execute playbook ansible-playbook shutdown-trunk-ports.yml -C -V to check config of playbook and expected result
+8. Execute playbook 'ansible-playbook shutdown-trunk-ports.yml -C -V' to check config of playbook and expected result
 9. Execute playbook without check mode to proceed to disable interfaces - ansible-playbook shutdown-trunk-ports.yml
 
 
